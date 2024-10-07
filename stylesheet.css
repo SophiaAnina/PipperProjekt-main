@@ -1,0 +1,324 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.sideBar{
+    display: flex;
+    flex-direction: column;
+    background-color: #1e1f22;
+    position: absolute;
+    height: 52em;
+    width: 15%;
+}
+
+.sideBar i{
+    color: white;
+    margin: 40px 60px;
+    font-size: 40px;
+}
+
+.sideBar a{
+    float: left;
+    position: relative;
+    left: 25%;
+    font-size: 24px;
+    margin: 10px;
+    border: none;
+    background: none;
+    color: white;
+    text-decoration: none;
+}
+
+.circle{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    bottom: 50px;
+    margin-left: 60px; 
+}
+
+.circle p{
+    color: white;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+.searchBar{
+    display: flex;
+    flex-direction: column;
+    background-color: #1e1f22;
+    position: absolute;
+    right: 0;
+    height: 52em;
+    width: fit-content;
+    padding: 10px;
+}
+
+.searchSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.search{
+    font-size: 24px;
+    padding: 5px;
+    border-radius: 0.8em;
+    border: none;
+}
+
+.sideBar button{
+    font-size: 24px;
+    margin: 5px;
+    color: white;
+    background-color: rgb(65, 139, 188);
+    border-radius: 1em;
+    border: none;
+    width: 100px;
+    left: 25%;
+    position: relative;
+    text-align: center;
+}
+.post{
+    left: 23% !important;
+}
+
+
+
+  ::selection{
+    color: #fff;
+    background: #1da1f2;
+  }
+  .wrapper{
+    background: #fff;
+    max-width: 475px;
+    width: 100%;
+    border-radius: 15px;
+    padding: 25px 25px 15px 25px;
+    border: solid #1e1f22;
+    position: absolute;
+    left: 33%;
+    top: 5%;
+}
+
+.wrapperProfil{
+  display: none;
+}
+
+.wrapperProfilresponsive{
+  background: #fff;
+    max-width: 475px;
+    width: 100%;
+    border-radius: 15px;
+    padding: 25px 25px 15px 25px;
+    border: solid #1e1f22;
+    position: absolute;
+    left: 33%;
+    top: 5%;
+}
+
+.wrapperMeddelelser{
+  display: none;
+}
+.wrapperMeddelelserresponsive{
+  background: #fff;
+    max-width: 475px;
+    width: 100%;
+    border-radius: 15px;
+    padding: 25px 25px 15px 25px;
+    border: solid #1e1f22;
+    position: absolute;
+    left: 33%;
+    top: 5%;
+}
+    
+  .input-box{
+    padding-top: 10px;
+    border-bottom: 1px solid #e6e6e6;
+    font-size: 24px;
+  }
+  .input-box .tweet-area{
+    position: relative;
+    overflow-y: auto;
+    display: grid;
+  }
+ 
+  #Brugernavn{
+   grid-row:2/4;
+   height: 50%;
+   align-self: center;
+   border: none;
+  }
+  #Brugernavn, #Besked{
+    font-size: 24px;
+  }
+  .profil{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+  }
+  .profil p{
+    grid-column: 1/5;
+    grid-row: 1/2;
+    
+  }
+  .avatar{
+    display: flex;
+    width: 70px;
+    overflow: hidden;
+    background: black;
+    border-radius: 11em;
+    margin: 10px 0;
+    grid-row: 2/4;
+    position: relative;
+  }
+  .avatar:hover{
+  width: fit-content;
+  }
+  .avatar img{
+    width: 50px;
+    margin:  10px;
+  }
+  .tweet-area::-webkit-scrollbar{
+    width: 0px;
+  }
+  .tweet-area .placeholder{
+    position: absolute;
+    margin-top: -3px;
+    font-size: 22px;
+    color: #98A5B1;
+    pointer-events: none;
+  }
+  .tweet-area .input{
+    outline: none;
+    font-size: 17px;
+    min-height: inherit;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  .tweet-area .editable{
+    position: relative;
+    z-index: 5;
+  }
+  .tweet-area .readonly{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    color: transparent;
+    background: transparent;
+  }
+  .readonly .highlight{
+    background: #fd9bb0;
+  }
+ 
+  .bottom{
+    display: flex;
+    margin-top: 13px;
+    align-items: center;
+    justify-content: space-between;
+  }
+.Caleb:hover{
+background-color: rgb(65, 139, 188);
+}
+.Chase:hover{
+  background-color: rgb(65, 139, 188);
+}
+.Easton:hover{
+  background-color: rgb(65, 139, 188);
+}
+.Mackenzie:hover{
+  background-color: rgb(65, 139, 188);
+}
+.Aidan:hover{
+  background-color: rgb(65, 139, 188);
+}
+.Amaya:hover{
+  background-color: rgb(65, 139, 188);
+}
+  .bottom .content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .bottom .counter{
+    color: #333;
+    display: none;
+    font-weight: 500;
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid #aab8c2;
+  }
+  .bottom button{
+    padding: 9px 18px;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    background: #1da1f2;
+    color: #fff;
+    cursor: pointer;
+    pointer-events: none;
+    transition: background 0.2s ease;
+  }
+  .bottom button.active{
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .bottom button:hover{
+    background: #0d8bd9;
+  }
+  #btnSubmit{
+ 
+    border-radius: 0.5em;
+    font-size: 24px;
+    width: 100px;
+    padding: 6px 24px;
+   
+    background: #418BBC;
+    color: white;
+    border: none;
+
+  }
+  #btnSubmit:active{
+    opacity: 1;
+    pointer-events: auto;
+  }
+  #btnSubmit:hover{
+    background: #0d8bd9;
+  }
+  .counter {
+    text-align: right;
+    color: #888;  
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  #pipperResult{
+    position: absolute;
+    left: 500px;
+    top: 425px;
+    width: 700px;
+   }
+   .pip{
+    display: grid;
+    border: solid;
+    border-radius: 0.8em;
+    padding: 10px;
+    margin: 10px;
+    width: 500px;
+   }
+   .brugernavn{
+    margin: 10px;
+   }
+   .besked{
+   width: fit-content;
+   justify-self: center;
+   }

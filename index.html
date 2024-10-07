@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" href="dove.jpg">
+    <title>Pipper</title>
+    <link rel="stylesheet" href="stylesheet.css">
+
+    <!-- Link til fontawesome -->
+    <script src="https://kit.fontawesome.com/d159f481dd.js" crossorigin="anonymous"></script>
+
+    
+
+</head>
+<body>
+  <div id="container">
+    <div class="sideBar">
+        <i class="fa-solid fa-dove"></i>
+        <a href="index.html">Forside</a>
+        <a href="meddelser.html">Meddelelser</a>
+        <a href="profil.html"> Profil</a>
+
+        <button><a class="post" href="">Post</a></button>
+    
+        <div class="circle">
+            <p>Profil</p>
+        </div>
+    </div>
+
+    <div class="feed"></div>
+
+    <div class="searchBar">
+        <div class="searchSection">
+            <input type="text" placeholder="Søg" class="search">
+        </div>
+    </div>
+    <div class="wrapper">
+      <div class="input-box">
+        <form id="pipperForm">
+          <div class="tweet-area">
+            <div class="profil">
+            <p>Choose your avatar:</p>
+            <div class="avatar">
+            <span class="Caleb">
+            <img src="https://api.dicebear.com/9.x/croodles/svg?seed=Caleb" alt="avatar" />
+            </span>
+            <span class="Chase">
+            <img src="https://api.dicebear.com/9.x/croodles/svg?seed=Chase" alt="avatar" />
+            </span>
+            <span class="Easton">
+            <img src="https://api.dicebear.com/9.x/croodles/svg?seed=Easton"alt="avatar" />
+            </span>
+            <span class="Mackenzie">
+            <img src="https://api.dicebear.com/9.x/croodles/svg?seed=Mackenzie"alt="avatar" />
+            </span>
+            <span class="Aidan">
+            <img src="https://api.dicebear.com/9.x/croodles/svg?seed=Aidan"alt="avatar" />
+            </span>
+            <span class="Amaya">
+            <img src="https://api.dicebear.com/9.x/croodles/svg?seed=Amaya"alt="avatar" />
+            </span>
+          </div>
+          <input type="text" id="Brugernavn" name="Brugernavn" placeholder="Username">
+          </div>
+           
+      
+            <!-- Max length of 255 characters for this input field -->
+            <input type="text" id="Besked" name="Besked" spellcheck="false" maxlength="255" placeholder="What's on your mind?">
+            
+            <div class="counter" id="counter">Characters: 0/255</div>
+           
+            <button id="btnSubmit" type="submit" value="Reload Page" onClick="reload">Post</button>
+          
+           
+           </div>
+        </form>
+      </div>
+
+    </div>
+    <div id="pipperResult">
+    </div>
+    </div>
+    <script>
+      const beskedInput = document.getElementById('Besked');
+      const counter = document.getElementById('counter');
+      const maxLength = 255;
+  
+      // Update character count as the user types and enforce the limit
+      beskedInput.addEventListener('input', function() {
+        let characterCount = beskedInput.value.length;
+  
+        // Update the counter display
+        counter.textContent = 'Characters: ' + characterCount + '/' + maxLength;
+  
+        // Highlight the counter in red if the limit is reached
+        if (characterCount >= maxLength) {
+          counter.classList.add('over-limit');
+        } else {
+          counter.classList.remove('over-limit');
+        }
+      });
+    </script>
+  
+
+
+      <script src="script.js"></script>   
+</body>
+</html>
+

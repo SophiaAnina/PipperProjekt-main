@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipper</title>
+    <link rel="stylesheet" href="stylesheet.css">
+
+    <!-- Link til fontawesome -->
+    <script src="https://kit.fontawesome.com/d159f481dd.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+    <div class="sideBar">
+
+        <i class="fa-solid fa-dove"></i>
+        <a href="index.html">Forside</a>
+        <a href="meddelser.html">Meddelelser</a>
+        <a href="profil.html"> Profil</a>
+
+        <button><a href="javascript:void(0);" onclick="myModalProfil()">
+            Post
+        </a></button>
+    
+        <div class="circle">
+            <p>Profil</p>
+        </div>
+    </div>
+
+    <div class="feed">
+
+    </div>
+
+    <div class="searchBar">
+        <div class="searchSection">
+            <input type="text" placeholder="Søg" class="search">
+        </div>
+    </div>
+
+    <div class="wrapperProfil" id="myWrapperProfil">
+        <div class="input-box">
+          <div class="tweet-area">
+            <span class="placeholder">What's happening?</span>
+            <div class="input editable" contenteditable="true" spellcheck="false"></div>
+            <div class="input readonly" contenteditable="true" spellcheck="false"></div>
+          </div>
+        </div>
+        <div class="bottom">
+          <div class="content">
+            <span class="counter">100</span>
+            <button>Post</button>
+          </div>
+        </div>
+      </div>
+      <script src="script.js"></script>   
+</body>
+</html>
