@@ -10,114 +10,80 @@
 
     <!-- Link til fontawesome -->
     <script src="https://kit.fontawesome.com/d159f481dd.js" crossorigin="anonymous"></script>
-
-    
-
 </head>
 <body>
-  <div id="container">
+  <!-- Navigation (sideBar) -->
     <div class="sideBar">
         <i class="fa-solid fa-dove"></i>
         <a href="index.html">Forside</a>
-        <a href="meddelser.html">Meddelelser</a>
-        <a href="profil.html"> Profil</a>
-
-        <button><a class="post" href="">Post</a></button>
-    
-        <div class="circle">
-            <p>Profil</p>
-        </div>
+        <a href="#">Meddelelser</a>
+        <a href="#"> Profil</a>
     </div>
 
-    <div class="feed"></div>
-
+    <!--  -->
     <div class="searchBar">
         <div class="searchSection">
             <input type="text" id="searchInput" placeholder="Søg" class="search">
         </div>
     </div>
+
+    <!-- Opslagsfelt -->
     <div class="wrapper">
       <div class="input-box">
         <form id="pipperForm">
           <div class="tweet-area">
             <div class="profil">
-            <p>Choose your avatar:</p>
-            <div class="avatar">
-            <span class="Caleb">
-              
-              <img id="avatarOne"
-              src="https://api.dicebear.com/9.x/big-ears/svg?seed=Mackenzie"alt="avatar" />
-            </span>
-            <span class="Chase">
-            
-              <img id="avatarTwo"
-              src="https://api.dicebear.com/9.x/big-ears/svg?seed=Jude"alt="avatar" />
-            </span>
-            <span class="Easton">
-            
-              <img id="avatarThree"
-              src="https://api.dicebear.com/9.x/big-ears/svg?seed=Oliver"alt="avatar" />
-            </span>
-            <span class="Mackenzie">
-           
-              <img id="avatarFour"
-              src="https://api.dicebear.com/9.x/big-ears/svg?seed=Avery"alt="avatar" />
-            </span>
-            <span class="Aidan">
-           
-              <img id="avatarFive"
-              src="https://api.dicebear.com/9.x/big-ears/svg?seed=Aidan"alt="avatar" />
-            </span>
-            <span class="Amaya">
-          
-              <img id="avatarSix"
-              src="https://api.dicebear.com/9.x/big-ears/svg?seed=Christian"alt="avatar" />
-            </span>
+            <!-- Avatar profil -->
+            <div class="avatar-selection">
+              <p>Vælg din avatar:</p>
+              <div class="avatars">
+                <label>
+                  <input type="radio" name="avatar" id="avatarOne" value="https://api.dicebear.com/9.x/big-ears/svg?seed=Mackenzie" hidden>
+                  <img src="https://api.dicebear.com/9.x/big-ears/svg?seed=Mackenzie" alt="Avatar One" />
+                </label>
+                <label>
+                  <input type="radio" name="avatar" id="avatarTwo" value="https://api.dicebear.com/9.x/big-ears/svg?seed=Jude" hidden>
+                  <img src="https://api.dicebear.com/9.x/big-ears/svg?seed=Jude" alt="Avatar Two" />
+                </label>
+                <label>
+                  <input type="radio" name="avatar" id="avatarThree" value="https://api.dicebear.com/9.x/big-ears/svg?seed=Oliver" hidden>
+                  <img src="https://api.dicebear.com/9.x/big-ears/svg?seed=Oliver" alt="Avatar Three" />
+                </label>
+                <label>
+                <input type="radio" name="avatar" id="avatarFour" value="https://api.dicebear.com/9.x/big-ears/svg?seed=Christian" hidden>
+                  <img src="https://api.dicebear.com/9.x/big-ears/svg?seed=Christian" alt="Avatar Four" />
+              </label>
+                <label>
+                  <input type="radio" name="avatar" id="avatarFive" value="https://api.dicebear.com/9.x/big-ears/svg?seed=Aidan" hidden>
+                  <img src="https://api.dicebear.com/9.x/big-ears/svg?seed=Aidan" alt="Avatar Five" />
+                </label>
+                <label>
+                <input type="radio" name="avatar" id="avatarSix" value="https://api.dicebear.com/9.x/big-ears/svg?seed=Avery" hidden>
+                  <img src="https://api.dicebear.com/9.x/big-ears/svg?seed=Avery" alt="Avatar Six" />
+                </label>
+              </div>
+            </div>
+            <!-- Brugernavnfelt -->
+          <label for="Brugernavn">Brugernavn:</label>
+          <input type="text" id="Brugernavn" name="Brugernavn" placeholder="Brugernavn">
           </div>
-          <input type="text" id="Brugernavn" name="Brugernavn" placeholder="Username">
-          </div>
            
-      
-            <!-- Max length of 255 characters for this input field -->
-            <input type="text" id="Besked" name="Besked" spellcheck="false" maxlength="255" placeholder="What's on your mind?">
-            
-            <div class="counter" id="counter">Characters: 0/255</div>
+            <!-- Beskedfelt -->
+             <label for="Besked">Besked:</label>
+            <input type="text" id="Besked" name="Besked" spellcheck="false" maxlength="255" placeholder="Din Besked">
+            <!-- Maks Anslag angivet -->
+            <div class="counter" id="counter">Anslag: 0/255</div>
            
-            <button id="btnSubmit" type="submit">Submit</button>
-          
-           
+            <button id="btnSubmit" type="submit">Send</button>
            </div>
         </form>
       </div>
-
     </div>
+
+    <!-- Feed -->
     <div id="pipperResult">
     </div>
-    </div>
-    <script>
-      const beskedInput = document.getElementById('Besked');
-      const counter = document.getElementById('counter');
-      const maxLength = 255;
-  
-      // Update character count as the user types and enforce the limit
-      beskedInput.addEventListener('input', function() {
-        let characterCount = beskedInput.value.length;
-  
-        // Update the counter display
-        counter.textContent = 'Characters: ' + characterCount + '/' + maxLength;
-  
-        // Highlight the counter in red if the limit is reached
-        if (characterCount >= maxLength) {
-          counter.classList.add('over-limit');
-        } else {
-          counter.classList.remove('over-limit');
-        }
-      });
-    </script>
-  
-
-
-      <script src="script.js"></script>   
+    <script src="script.js"></script>   
 </body>
 </html>
 
