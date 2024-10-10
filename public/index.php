@@ -39,6 +39,7 @@
         // kun gør følgende hvis $input['name'] er udfyldt OG ikke er tom
         if (isset($input['Brugernavn']) && trim($input['Brugernavn'], " ") != "") 
         {
+           
             if (isset($input['Besked']) && trim($input['Besked'], " ") != "") 
             { // server side validering
                 if (isset($input['Dato']) && trim($input['Dato'], " ") != "") 
@@ -67,5 +68,6 @@
        }
         // kun gør ovenstående hvis $input['name'] er udfyldt OG ikke er tom
     }
+
     // echo $password; 
 ?> 

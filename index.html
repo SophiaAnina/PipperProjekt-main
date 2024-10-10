@@ -33,7 +33,7 @@
 
     <div class="searchBar">
         <div class="searchSection">
-            <input type="text" placeholder="Søg" class="search">
+            <input type="text" id="searchInput" placeholder="Søg" class="search">
         </div>
     </div>
     <div class="wrapper">
@@ -44,22 +44,34 @@
             <p>Choose your avatar:</p>
             <div class="avatar">
             <span class="Caleb">
-            <img src="https://api.dicebear.com/9.x/croodles/svg?seed=Caleb" alt="avatar" />
+              
+              <img id="avatarOne"
+              src="https://api.dicebear.com/9.x/big-ears/svg?seed=Mackenzie"alt="avatar" />
             </span>
             <span class="Chase">
-            <img src="https://api.dicebear.com/9.x/croodles/svg?seed=Chase" alt="avatar" />
+            
+              <img id="avatarTwo"
+              src="https://api.dicebear.com/9.x/big-ears/svg?seed=Jude"alt="avatar" />
             </span>
             <span class="Easton">
-            <img src="https://api.dicebear.com/9.x/croodles/svg?seed=Easton"alt="avatar" />
+            
+              <img id="avatarThree"
+              src="https://api.dicebear.com/9.x/big-ears/svg?seed=Oliver"alt="avatar" />
             </span>
             <span class="Mackenzie">
-            <img src="https://api.dicebear.com/9.x/croodles/svg?seed=Mackenzie"alt="avatar" />
+           
+              <img id="avatarFour"
+              src="https://api.dicebear.com/9.x/big-ears/svg?seed=Avery"alt="avatar" />
             </span>
             <span class="Aidan">
-            <img src="https://api.dicebear.com/9.x/croodles/svg?seed=Aidan"alt="avatar" />
+           
+              <img id="avatarFive"
+              src="https://api.dicebear.com/9.x/big-ears/svg?seed=Aidan"alt="avatar" />
             </span>
             <span class="Amaya">
-            <img src="https://api.dicebear.com/9.x/croodles/svg?seed=Amaya"alt="avatar" />
+          
+              <img id="avatarSix"
+              src="https://api.dicebear.com/9.x/big-ears/svg?seed=Christian"alt="avatar" />
             </span>
           </div>
           <input type="text" id="Brugernavn" name="Brugernavn" placeholder="Username">
@@ -71,7 +83,7 @@
             
             <div class="counter" id="counter">Characters: 0/255</div>
            
-            <button id="btnSubmit" type="submit" value="Reload Page" onClick="reload">Post</button>
+            <button id="btnSubmit" type="submit">Submit</button>
           
            
            </div>

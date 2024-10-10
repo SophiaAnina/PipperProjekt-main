@@ -1,4 +1,4 @@
-<button id="btnSubmit" onClick="window.location.reload();">Refresh Page</button>
+
 
 function myModalProfil() {
   var x = document.getElementById("myWrapperProfil");
@@ -8,6 +8,8 @@ function myModalProfil() {
     x.className = "wrapperProfil";
   }
 }
+
+
 function myModalMeddelelser() {
   var x = document.getElementById("myWrapperMeddelelser");
   if (x.className === "wrapperMeddelelser") {
@@ -16,6 +18,49 @@ function myModalMeddelelser() {
     x.className = "wrapperMeddelelser";
   }
 }
+// Search
+
+document.getElementById("searchInput").addEventListener("input", (event) => {
+  const searchQuery = event.target.value.toLowerCase();
+
+  // Filter pips based on Brugernavn
+  const filteredPips = pips.filter(pip => pip.Brugernavn.toLowerCase().includes(searchQuery));
+
+  // Display filtered results
+  const displayElement = document.getElementById("pipperResult");
+  const htmlPipList = filteredPips.map(pip => {
+      return `
+      <div class="pip">
+        <p class="brugernavn">${pip.Brugernavn}</p>
+        <p class="besked">${pip.Besked}</p>
+        <p class="dato">${pip.Dato}</p>
+        <img class="avatar" src="${pip.Avatar}"><img>
+      </div>
+      `;
+  }).join("");
+  displayElement.innerHTML = htmlPipList;
+});
+let pips = [];  // Declare globally
+
+window.addEventListener("load", async () => {
+    const url = "http://localhost:8000/pipper";
+    const response = await fetch(url);
+    pips = await response.json();  // Store globally
+    
+    // Initial display
+    const displayElement = document.getElementById("pipperResult");
+    const htmlPipList = pips.map(pip => {
+        return `
+        <div class="pip">
+          <p class="brugernavn">${pip.Brugernavn}</p>
+          <p class="besked">${pip.Besked}</p>
+          <img class="avatar" src="${pip.Avatar}"><img>
+          <p class="dato">${pip.Dato}</p>
+        </div>
+        `;
+    }).join("");
+    displayElement.innerHTML = htmlPipList;
+});
 
 // C indsæt
 
@@ -24,11 +69,12 @@ document.getElementById("pipperForm").addEventListener("submit", async (event) =
 
   const Brugernavn = document.getElementById("Brugernavn").value;
   const Besked = document.getElementById("Besked").value;
-  
+  const Avatar = document.getElementById("avatar").value;
   
   const data = {
       Brugernavn: Brugernavn,
       Besked: Besked,
+    
       Dato: new Date().toISOString().slice(0,19)
   };
 
@@ -48,6 +94,7 @@ document.getElementById("pipperForm").addEventListener("submit", async (event) =
   
   console.log(pipper);
   console.log("yayy det virker!");
+
 })
 window.addEventListener("load", async (event) => {
   const url = "http://localhost:8000/pipper";
@@ -65,8 +112,10 @@ console.log(pips)
   const htmlPipList = pips.map(pip => {
     return `
     <div class="pip">
-      <p class="brugernavn">Brugernavn:${pip.Brugernavn}</p>
+      <p class="brugernavn">${pip.Brugernavn}</p>
       <p class="besked">${pip.Besked}</p>
+      <p class="dato">${pip.Dato}</p>
+      <img class="avatar" src="${pip.Avatar}"><img>
     </div>
     `
   }).join("");
