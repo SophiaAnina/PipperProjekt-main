@@ -47,9 +47,10 @@
                 {
                     $data = [
                         'Brugernavn' => $input['Brugernavn'],
+                        'Avatar' => $input['Avatar'],
                         'Besked' => $input['Besked'],
                         'Dato' => $input['Dato'],
-                        'Avatar' => $input['Avatar']
+                        
                     ];
             
                     $sql = 'INSERT INTO pipper VALUES(default, :Brugernavn, :Besked, :Dato, :Avatar)';

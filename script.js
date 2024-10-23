@@ -3,18 +3,22 @@ document.getElementById("searchInput").addEventListener("input", (event) => {
   const searchQuery = event.target.value.toLowerCase();
 
   // Filterer pips efter søgning
-  const filteredPips = pips.filter(pip => pip.Brugernavn.toLowerCase().includes(searchQuery));
+  const filteredPips = pips.filter(pip => pip.Brugernavn.toLowerCase().includes(searchQuery) || pip.Besked.toLowerCase().includes(searchQuery));
 
   // og Viser resultaterne der matcher
   const displayElement = document.getElementById("pipperResult");
   const htmlPipList = filteredPips.map(pip => {
       return `
       <div class="pip">
-        <p class="brugernavn">${pip.Brugernavn}</p>
-        <p class="besked">${pip.Besked}</p>
-        <p class="dato">${pip.Dato}</p>
-        <img class="avatar" src="${pip.Avatar}"><img>
+    <div class="profil-result">
+       <img class="avatar" src="${pip.Avatar}"><img>
+  
+      <p class="brugernavn">${pip.Brugernavn}</p>  
       </div>
+      <p class="besked">${pip.Besked}</p>
+      <p class="dato">${pip.Dato}</p>
+     
+    </div>
       `;
   }).join("");
   displayElement.innerHTML = htmlPipList;
@@ -32,12 +36,16 @@ window.addEventListener("load", async () => {
     const displayElement = document.getElementById("pipperResult");
     const htmlPipList = pips.map(pip => {
         return `
-        <div class="pip">
-          <p class="brugernavn">${pip.Brugernavn}</p>
-          <p class="besked">${pip.Besked}</p>
-          <img class="avatar" src="${pip.Avatar}"><img>
-          <p class="dato">${pip.Dato}</p>
-        </div>
+       <div class="pip">
+    <div class="profil-result">
+       <img class="avatar" src="${pip.Avatar}"><img>
+  
+      <p class="brugernavn">${pip.Brugernavn}</p>  
+      </div>
+      <p class="besked">${pip.Besked}</p>
+      <p class="dato">${pip.Dato}</p>
+     
+    </div>
         `;
     }).join("");
     displayElement.innerHTML = htmlPipList;
@@ -114,10 +122,14 @@ console.log(pips)
   const htmlPipList = pips.map(pip => {
     return `
     <div class="pip">
-      <p class="brugernavn">${pip.Brugernavn}</p>
+    <div class="profil-result">
+       <img class="avatar" src="${pip.Avatar}"><img>
+  
+      <p class="brugernavn">${pip.Brugernavn}</p>  
+      </div>
       <p class="besked">${pip.Besked}</p>
       <p class="dato">${pip.Dato}</p>
-      <img class="avatar" src="${pip.Avatar}"><img>
+     
     </div>
     `
   }).join("");
